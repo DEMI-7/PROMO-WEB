@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Dominio/Dominio.csproj" />
+  <Project Path="Negocio/Negocio.csproj" />
+  <Project Path="PROMO WEB/PROMO WEB.csproj" Id="9994e343-1d7c-41a4-9246-d09c198a6da8" />
+</Solution>
