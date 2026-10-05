@@ -11,7 +11,7 @@ namespace PROMO_WEB
 {
 
 
-    public partial class WebForm1
+    public partial class Productos
     {
     }
 }

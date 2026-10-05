@@ -11,7 +11,7 @@ namespace PROMO_WEB
 {
 
 
-    public partial class Site1
+    public partial class PromoMaster
     {
 
         /// <summary>
