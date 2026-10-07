@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Dominio;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -10,7 +10,7 @@ namespace Negocio
     {
         private SqlConnection conexion;
         private SqlCommand comando;
-        private SqlDataReader lector = null!; // Le puse el null! porque sino tiraba un warnin que no podia ser null
+        private SqlDataReader lector = null;
         public SqlDataReader Lector
         {
             get { return lector; }
@@ -18,7 +18,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("Server=localhost,1433;Database=CATALOGO_P3_DB;User Id=sa;Password=Grupo0_1234!;TrustServerCertificate=True;");
+            conexion = new SqlConnection("Server=localhost,1433;Database=PROMOS_DB;User Id=sa;Password=Demi1234!;TrustServerCertificate=True;");
             comando = new SqlCommand();
         }
 

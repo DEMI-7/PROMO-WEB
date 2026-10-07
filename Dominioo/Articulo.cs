@@ -20,5 +20,16 @@ namespace Dominio
         public Categoria CategoriaProducto { get; set; } = new Categoria();
         public decimal Precio { get; set; }
         public List<Imagen> listaImagenes { get; set; }= new List<Imagen>();
+        public string ImagenPortada
+        {
+            get
+            {
+                if(listaImagenes != null && listaImagenes.Count > 0)
+                {
+                    return listaImagenes[0].Url;
+                }
+                return "~/Imagenes/PlaceHolder.png";
+            }
+        }
     }
 }
