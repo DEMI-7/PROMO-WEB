@@ -37,7 +37,11 @@ namespace PROMO_WEB
 
         protected void BtnSeleccionar_Click(object sender, EventArgs e)
         {
+            int idArticulo = int.Parse(((Button)sender).CommandArgument);
+            Session["IdArticulo"] = idArticulo;
 
+            Response.Redirect("PromoRegistrarUsuario.aspx");
+            return;
         }
     }
 }

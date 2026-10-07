@@ -85,6 +85,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Imagenes\LogoVentaOKFavicon.png" />
     <Content Include="Imagenes\PlaceHolder.png" />
+    <Content Include="PromoRegistrarUsuario.aspx" />
     <Content Include="PromoSeleccion.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -97,6 +98,13 @@
     <Content Include="Productos.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PromoRegistrarUsuario.aspx.cs">
+      <DependentUpon>PromoRegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PromoRegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>PromoRegistrarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PromoSeleccion.aspx.cs">
       <DependentUpon>PromoSeleccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

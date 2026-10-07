@@ -11,25 +11,25 @@ namespace PROMO_WEB
 {
 
 
-    public partial class PromoSeleccion
+    public partial class PromoRegistrarUsuario
     {
 
         /// <summary>
-        /// Control LblNombre.
+        /// Control TxtDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNombre;
+        protected global::System.Web.UI.WebControls.TextBox TxtDNI;
 
         /// <summary>
-        /// Control RepTarjetasProd.
+        /// Control BtnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepTarjetasProd;
+        protected global::System.Web.UI.WebControls.Button BtnVolver;
     }
 }
