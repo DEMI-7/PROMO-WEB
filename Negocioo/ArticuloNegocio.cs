@@ -143,7 +143,48 @@ namespace Negocio
 			}
 		}
 
-		public void Modificar(Articulo articulo)
+        public Articulo BuscarArticulo(int id)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.SetearConsulta("SELECT Id, Codigo, Nombre FROM ARTICULOS WHERE Id = @IdArticulo");
+                conexion.agregarParametro("@IdArticulo", id);
+                conexion.EjecutarLectura();
+
+				Articulo aux = new Articulo();
+
+                while (conexion.Lector.Read())
+                {
+					ImagenNegocio negocio = new ImagenNegocio();
+
+                    aux.Id = (int)conexion.Lector["Id"];
+
+                    if (!(conexion.Lector["Codigo"] is DBNull))
+                    {
+                        aux.Codigo = (string)conexion.Lector["Codigo"];
+                    }
+
+                    aux.Nombre = (string)conexion.Lector["Nombre"];
+
+					aux.listaImagenes = negocio.ListarPorIdArticulo(aux.Id);
+                }
+
+                return aux;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
+        public void Modificar(Articulo articulo)
 		{
 			AccesoDatos conexion = new AccesoDatos();
 

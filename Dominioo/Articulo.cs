@@ -28,7 +28,7 @@ namespace Dominio
                 {
                     return listaImagenes[0].Url;
                 }
-                return "~/Imagenes/PlaceHolder.png";
+                return "Imagenes/PlaceHolder.png";
             }
         }
     }

@@ -4,8 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenedor1" runat="server">
     <h1>Seleccione su premio</h1>
 
-    <asp:Label ID="LblNombre" runat="server" Text="Label"></asp:Label>
-
     <div class="row">
         <asp:Repeater ID="RepTarjetasProd" runat="server">
             <ItemTemplate>

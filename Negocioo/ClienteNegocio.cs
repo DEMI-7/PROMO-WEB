@@ -49,5 +49,31 @@ namespace Negocio
                 conexion.CerrarConexion();
             }
         }
+
+        //INSERT INTO CLIENTES (Documento, Nombre, Apellido, Email, Direccion, Ciudad, CP) VALUES (@DNI, @Nombre, @Apellido, @Email, @Direccion, @Ciudad, @CodPostal)
+        public bool AltaCliente(Cliente nuevoCliente)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.SetearConsulta("INSERT INTO CLIENTES (Documento, Nombre, Apellido, Email, Direccion, Ciudad, CP) VALUES (@DNI, @Nombre, @Apellido, @Email, @Direccion, @Ciudad, @CodPostal)");
+                
+                conexion.agregarParametro("@DNI",nuevoCliente.DNI);
+                conexion.agregarParametro("@Nombre", nuevoCliente.Nombre);
+                conexion.agregarParametro("@Apellido", nuevoCliente.Apellido);
+                conexion.agregarParametro("@Email", nuevoCliente.Email);
+                conexion.agregarParametro("@Direccion", nuevoCliente.Direccion);
+                conexion.agregarParametro("@Ciudad", nuevoCliente.Ciudad);
+                conexion.agregarParametro("@CodPostal", nuevoCliente.CodPostal);
+
+                conexion.ejecutarAccion();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

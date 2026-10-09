@@ -54,5 +54,24 @@ namespace Negocio
                 conexion.CerrarConexion();
             }
         }
+
+        public void CanjearVoucher(Cliente cliente, int idArticulo, string CodVoucher)
+        {
+            //UPDATE Vouchers SET IdCliente = @IdCliente, IdArticulo = @IdArticulo, FechaCanje = GETDATE() WHERE CodigoVoucher = @CodVoucher;
+            AccesoDatos conexion = new AccesoDatos();
+            try
+            {
+                conexion.SetearConsulta("UPDATE Vouchers SET IdCliente = @IdCliente, IdArticulo = @IdArticulo, FechaCanje = GETDATE() WHERE CodigoVoucher = @CodVoucher;");
+                conexion.agregarParametro("@IdCliente", cliente.ID);
+                conexion.agregarParametro("@IdArticulo",idArticulo);
+                conexion.agregarParametro("@CodVoucher", CodVoucher);
+
+                conexion.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -24,15 +24,20 @@ namespace PROMO_WEB
             try
             {
                 Voucher voucher = negocio.BuscarVoucher(codIngresado);
-                if (voucher != null && (voucher.IdCliente != 0))
+                if (voucher == null)
                 {
-                    Session["CodVoucher"] = voucher.Codigo;
-
-                    Response.Redirect("PromoSeleccion.aspx");
+                    LblEjemplo.Text = "Código Incorrecto o no válido";
+                    return;
+                }
+                else if (voucher.IdCliente != 0)
+                {
+                    LblEjemplo.Text = "Código Incorrecto o no válido";
+                    return;
                 }
                 else
                 {
-                    LblEjemplo.Text = "Código Incorrecto o no válido";
+                    Session["CodVoucher"] = voucher.Codigo;
+                    Response.Redirect("PromoSeleccion.aspx");
                 }
             }
             catch (Exception)
